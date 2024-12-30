@@ -3,8 +3,6 @@
 // NASA API Key
 const API_KEY = 'iMlnGtF0lUGIEXefzgDIuFnKR5IgTtfXRUvoDSUm';
 
-// NASA API URLs
-const METEOR_URL = `https://api.nasa.gov/neo/rest/v1/feed?start_date=2024-12-07&end_date=2024-12-08&api_key=${API_KEY}`;
 const QUOTE_URL = `https://api.nasa.gov/planetary/apod?api_key=${API_KEY}`;
 
 // DOM element to display SpaceXs information cards
@@ -84,3 +82,90 @@ window.addEventListener('DOMContentLoaded', () => {
   // Fetch Mars weather data (may need adjustments if the API is retired)
   getWeather();
 });
+
+
+
+
+const canvasElement = document.querySelector('.canvas-element');
+    const context = canvasElement.getContext('2d');
+    const METEOR_URL = `https://api.nasa.gov/neo/rest/v1/feed?start_date=2024-12-07&end_date=2024-12-08&api_key=${API_KEY}`;
+    let meteorsArray = [];
+
+    canvasElement.width = window.innerWidth;
+    canvasElement.height = window.innerHeight;
+
+    // Meteor class
+    class Meteor {
+      constructor(x, y, size, speedX, speedY) {
+        this.x = x || Math.random() * canvasElement.width;
+        this.y = y || Math.random() * canvasElement.height;
+        this.size = size || Math.random() * 10 + 5; // Random size between 5 and 15
+        this.speedX = speedX || Math.random() * 3 - 1.5; // Speed in X direction
+        this.speedY = speedY || Math.random() * 3 + 1; // Speed in Y direction
+      }
+
+      // Update meteor position
+      update() {
+        this.x += this.speedX;
+        this.y += this.speedY;
+
+        // Reset meteor position if it goes off-screen
+        if (this.x < 0 || this.x > canvasElement.width || this.y > canvasElement.height) {
+          this.x = Math.random() * canvasElement.width;
+          this.y = -10;
+        }
+      }
+
+      // Draw meteor
+      draw() {
+        context.beginPath();
+        context.ellipse(this.x, this.y, this.size, this.size / 2, Math.PI / 4, 0, Math.PI * 2);
+        context.fillStyle = 'orange';
+        context.fill();
+      }
+    }
+
+    // Fetch meteor data from NASA API
+    async function fetchMeteors() {
+      try {
+        const response = await fetch(METEOR_URL);
+        const data = await response.json();
+        const meteorData = data.near_earth_objects['2024-12-07'];
+
+        meteorsArray = meteorData.map((meteor) => {
+          return new Meteor(
+            Math.random() * canvasElement.width,
+            Math.random() * canvasElement.height,
+            meteor.estimated_diameter.meters.estimated_diameter_min/200,
+            Math.random() * 3 - 1.5,
+            Math.random() * 3 + 1
+          );
+        });
+
+        // Start animation after data is fetched
+        animate();
+      } catch (error) {
+        console.error('Error fetching meteor data:', error);
+      }
+    }
+
+    // Animate meteors
+    function animate() {
+      context.clearRect(0, 0, canvasElement.width, canvasElement.height);
+
+      meteorsArray.forEach((meteor) => {
+        meteor.update();
+        meteor.draw();
+      });
+
+      requestAnimationFrame(animate);
+    }
+
+    // Adjust canvas size on window resize
+    window.addEventListener('resize', function () {
+      canvasElement.width = window.innerWidth;
+      canvasElement.height = window.innerHeight;
+    });
+
+    // Fetch and render meteors
+    fetchMeteors();

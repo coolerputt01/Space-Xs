@@ -12,6 +12,7 @@ body{
   display: flex;
   justify-content:center;
   align-items: center;
+  flex-direction:column;
 }
 .spacexs-logo{
   width:3em;
@@ -135,3 +136,51 @@ body{
 .topping{
   margin-top:80%;
 }
+
+.meteor-container{
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .canvas-element {
+      display: block;
+      background-color: #08005c;
+    }
+    .info {
+      position: absolute;
+      top: 40%;
+    }
+    .spacexs-earth {
+      width: 5em;
+      height: 5em;
+      object-fit: cover;
+      animation:rotate-clock-wise 7s linear infinite;
+    }
+    @keyframes rotate-clock-wise{
+      0%{
+        transform: rotateZ(0deg);
+      }
+      100%{
+        transform: rotateZ(360deg);
+      }
+    }
+    .spacexs-time-head{
+      position: absolute;
+      top: 10%;
+      font-size: 2.3em;
+      text-align: center;
+      background-color: transparent;
+      color:#fff;
+    }
+    @media (min-width:768px){
+      .nav-bar{
+        height:5vh;
+      }
+      .card-img{
+        width:73%;
+      }
+      .spacexs-text{
+        padding:18px;
+      }
+    }

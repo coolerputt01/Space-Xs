@@ -95,3 +95,16 @@ model-viewer:focus{
   color:#fff;
   padding:18px;
 }
+@media (min-width:768px){
+  .hero-head{
+    font-size:7em ;
+  }
+  .space-x-button{
+    font-size:1.5em;
+    border-radius:50px;
+    padding:30px;
+  }
+  .card-text{
+    font-size:1.5em;
+  }
+}
