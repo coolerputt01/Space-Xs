@@ -63,6 +63,7 @@ body{
 }
 .card-img{
   width:15em;
+  height:27vh;
   object-fit:cover;
   border-radius:20%;
 }
