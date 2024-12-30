@@ -1,8 +1,8 @@
 {
   "name": "SpaceXs",
   "short_name": "SpaceXs",
-  "start_url": "/",
-  "scope": "/Space-Xs",
+  "start_url": "/Space-Xs/",
+  "scope": "/Space-Xs/",
   "display": "standalone",
   "background_color": "#08005c",
   "theme_color": "#ffffff",
