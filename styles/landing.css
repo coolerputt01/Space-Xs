@@ -75,6 +75,7 @@ model-viewer:focus{
   margin-top:-45%;
   background-color:#fff;
   flex-direction: column;
+  margin-bottom:20%;
 }
 .card:first-child{
   margin-top:50%;

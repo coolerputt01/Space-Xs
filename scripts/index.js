@@ -100,8 +100,8 @@ const canvasElement = document.querySelector('.canvas-element');
         this.x = x || Math.random() * canvasElement.width;
         this.y = y || Math.random() * canvasElement.height;
         this.size = size || Math.random() * 10 + 5; // Random size between 5 and 15
-        this.speedX = speedX || Math.random() * 3 - 1.5; // Speed in X direction
-        this.speedY = speedY || Math.random() * 3 + 1; // Speed in Y direction
+        this.speedX = speedX || Math.random() * 2; // Speed in X direction
+        this.speedY = speedY || Math.random() * 0.5; // Speed in Y direction
       }
 
       // Update meteor position
@@ -119,7 +119,7 @@ const canvasElement = document.querySelector('.canvas-element');
       // Draw meteor
       draw() {
         context.beginPath();
-        context.ellipse(this.x, this.y, this.size, this.size / 2, Math.PI / 4, 0, Math.PI * 2);
+        context.arc(this.x, this.y, this.size*4,2 * Math.PI, 0,false);
         context.fillStyle = 'orange';
         context.fill();
       }
