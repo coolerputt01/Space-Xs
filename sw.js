@@ -1,18 +1,18 @@
-const CACHE_NAME = 'v1';
+const CACHE_NAME = 'v2'; // Update the cache name
 const urlsToCache = [
-  '/',
-  '/index.html',
-  '/landing.html',
-  './styles/index.css', // Add your CSS file
-  './scripts/index.js',  // Add your JavaScript file
-  './styles/landing.css', // Add your CSS file
-  './scripts/landing.js',  // Add your JavaScript file
-  './assets/rocket.glb',
-  './assets/telescope.svg',
- './assets/rocket.svg',
- '/assets/world.svg'
+  '/index.html?v=12345', // Add a version query parameter
+  '/landing.html?v=12345',
+  './styles/index.css?v=12345',
+  './scripts/index.js?v=12345',
+  './styles/landing.css?v=12345',
+  './scripts/landing.js?v=12345',
+  './assets/rocket.glb?v=12345',
+  './assets/telescope.svg?v=12345',
+  './assets/rocket.svg?v=12345',
+  '/assets/world.svg?v=12345'
 ];
 
+// Install event
 self.addEventListener('install', (event) => {
   event.waitUntil(
     caches.open(CACHE_NAME).then((cache) => {
@@ -21,6 +21,7 @@ self.addEventListener('install', (event) => {
   );
 });
 
+// Fetch event
 self.addEventListener('fetch', (event) => {
   event.respondWith(
     caches.match(event.request).then((response) => {
@@ -29,6 +30,7 @@ self.addEventListener('fetch', (event) => {
   );
 });
 
+// Activate event
 self.addEventListener('activate', (event) => {
   const cacheWhitelist = [CACHE_NAME];
   event.waitUntil(
