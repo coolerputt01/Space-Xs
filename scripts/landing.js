@@ -1,10 +1,11 @@
+//Space Xs AOS.
 AOS.init({
     duration: 750,  // Animation duration in ms
     easing: 'ease-in-out',  // Easing function
     once: false,  // Trigger the animation only once
     mirror: false,  // Reverse the animation when scrolling back up
 });
-
+//Space Xs Particle JS.
 // Initialize particles.js
 particlesJS('particles-js', {
   particles: {
@@ -66,4 +67,9 @@ particlesJS('particles-js', {
     }
   },
   retina_detect: true
+});
+//Handle redirect.
+const spaceButton = document.querySelector('.space-x-button');
+spaceButton.addEventListener('click',()=>{
+  document.location.href = "index.html";
 });
