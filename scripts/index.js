@@ -1,10 +1,10 @@
-// SpaceXs JavaScript Code
+// SpaceXs JavaScript Code.
 
 // NASA API Key
 const API_KEY = 'iMlnGtF0lUGIEXefzgDIuFnKR5IgTtfXRUvoDSUm';
 
 // NASA API URLs
-const METEOR_URL = `https://api.nasa.gov/neo/rest/v1/feed?start_date=2015-07-01&end_date=2024-12-30&api_key=${API_KEY}`;
+const METEOR_URL = `https://api.nasa.gov/neo/rest/v1/feed?start_date=2024-12-07&end_date=2024-12-08&api_key=${API_KEY}`;
 const QUOTE_URL = `https://api.nasa.gov/planetary/apod?api_key=${API_KEY}`;
 
 // DOM element to display SpaceXs information cards
