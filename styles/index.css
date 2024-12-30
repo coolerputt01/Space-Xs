@@ -8,6 +8,10 @@
 body{
   scroll-behavior: smooth;
   background-color:#60148c;
+
+  display: flex;
+  justify-content:center;
+  align-items: center;
 }
 .spacexs-logo{
   width:3em;
@@ -24,6 +28,7 @@ body{
   position: fixed;
   top:0;
   padding:10px;
+  z-index:10;
 }
 .brand{
   display: flex;
@@ -36,4 +41,40 @@ body{
   background-color: transparent;
   font-size:1.2em;
   color:#fff;
+}
+.spacexs-card{
+  width:85vw;
+  display:flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction:column;
+  gap:12%;
+  box-shadow: 5px 5px 40px -8px rgba(0,0,0,0.12);
+  border-radius:14px;
+  margin-top:35%;
+  backdrop-filter: blur(10px);
+  background-color: transparent;
+  z-index:1;
+}
+.card-top{
+  color:#fff;
+  text-align:center;
+  padding: 25px;
+}
+.card-img{
+  width:15em;
+  object-fit:cover;
+  border-radius:20%;
+}
+.spacexs-text{
+  padding:8px;
+  color:#fff;
+  line-height: 30px;
+  font-size:0.9em;
+}
+.timestamp{
+  color:#82bf0f;
+  width:100%;
+  text-align: right;
+  padding:8px;
 }
