@@ -73,3 +73,14 @@ const spaceButton = document.querySelector('.space-x-button');
 spaceButton.addEventListener('click',()=>{
   document.location.href = "index.html";
 });
+
+
+if ('serviceWorker' in navigator) {
+    navigator.serviceWorker.register('./sw.js')
+      .then((registration) => {
+        console.log('Service Worker registered with scope:', registration.scope);
+      })
+      .catch((error) => {
+        console.error('Service Worker registration failed:', error);
+      });
+  }
