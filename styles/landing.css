@@ -9,7 +9,7 @@ body{
   scroll-behavior: smooth;
 }
 .hero{
-  background: linear-gradient(70deg,#60148c,#1b0229);
+  background: linear-gradient(70deg,#190866,#08005c);
   width:100%;
   display: flex;
   justify-content: center;
@@ -85,7 +85,7 @@ model-viewer:focus{
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  background-color:#60148c;
+  background-color:#08005c;
   border-radius:14px;
   margin-top:6%;
 }
