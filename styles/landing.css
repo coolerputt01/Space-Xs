@@ -1,0 +1,94 @@
+*{
+  margin: 0;
+  padding:0;
+  box-sizing: border-box;
+  font-family: "Raleway",serif;
+}
+
+body{
+  scroll-behavior: smooth;
+}
+.hero{
+  background: linear-gradient(70deg,#60148c,#1b0229);
+  width:100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height:100vh;
+  position:relative;
+  flex-direction: column;
+}
+.hero-head{
+  position: absolute;
+  z-index:10;
+  top:15%;
+  color:#fff;
+  font-size:4em;
+  font-weight: normal;
+  opacity:0;
+  transform: translateY(110%);
+  animation:moveup 1.3s linear forwards;
+  background-color: transparent;
+}
+.space-x-button{
+  position: absolute;
+  z-index: 10;
+  padding:20px;
+  font-size:1em;
+  border: none;
+  outline: none;
+  border-radius:28px;
+  background-color:#82bf0f;
+  opacity:0;
+  transition: all 250ms ease;
+  animation:moveup 0.9s linear forwards;
+}
+model-viewer{
+  border:none;
+  outline:none;
+  animation:moveup 1.5s ease forwards;
+  z-index: 1;
+  opacity:0.7;
+  transform: translateY(110%);
+  background-color: transparent;
+}
+@keyframes moveup{
+  to{
+    opacity:1;
+    transform:translateY(0%);
+  }
+}
+model-viewer:focus{
+  border:none;
+  outline:none;
+}
+.info{
+  width:100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap:2%;
+  clip-path: polygon(0% 10%, 100% 0%,100% 100%, 0% 100%);
+  margin-top:-45%;
+  background-color:#fff;
+  flex-direction: column;
+}
+.card:first-child{
+  margin-top:50%;
+}
+.card{
+  width:75vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background-color:#60148c;
+  border-radius:14px;
+  margin-top:6%;
+}
+.card-text{
+  text-align: center;
+  width:100%;
+  color:#fff;
+  padding:18px;
+}

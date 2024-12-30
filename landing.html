@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Space Xs | Landing Page</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="./styles/landing.css">
+<link rel="stylesheet" href="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.css">
+<!-- AOS CSS -->
+<link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+</head>
+
+<body>
+  <main class="hero" id="particles-js">
+    <h2 class="hero-head">Space X</h2>
+    <button class="space-x-button">
+      Start your Journey🚀
+    </button>
+  <model-viewer 
+    src="./assets/rocket.glb" 
+    alt="3D Rocket" 
+    auto-rotate
+    rotation-per-second="20"
+    style="width: calc(100%); height: 400px;">
+</model-viewer>
+  </main>
+  <section class="info">
+    <div class="card" data-aos="fade-right">
+      <img src="./assets/world.svg" alt="Appropriate weather image" class="card-image">
+      <p class="card-text">View the weather.</p>
+    </div>
+    <div class="card" data-aos="fade-right">
+     <img src="./assets/telescope.svg" alt="Appropriate weather image" class="card-image">
+  <p class="card-text">Predict Meteor Showers and Cosmic events.</p>
+</div>
+<div class="card" data-aos="fade-right">
+  <img src="./assets/rocket.svg" alt="Appropriate weather image" class="card-image">
+      <p class="card-text">Satellite Tracking.</p>
+    </div>
+  </section>
+  <!-- AOS JS -->
+<script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+  <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/particles.js"></script>
+  <script src="./scripts/landing.js"></script>
+</body>
+
+</html>
