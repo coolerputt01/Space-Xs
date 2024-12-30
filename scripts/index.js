@@ -51,7 +51,7 @@ async function getQuote(date) {
  */
 async function getWeather() {
   try {
-    const response = await fetch(WEATHER_URL);
+    const response = await fetch(METEOR_URL);
     const data = await response.json(); // Adjust based on actual API response format
     console.log("Mars Weather Data:", data);
   } catch (error) {
